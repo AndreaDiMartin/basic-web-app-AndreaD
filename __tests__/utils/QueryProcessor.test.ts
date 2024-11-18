@@ -36,11 +36,19 @@ describe("QueryProcessor", () => {
     });
 
     test('Should return sum', () => {
-        const query = "What is the sum of 54 plus 74 ?";
+        const query = "What is 54 plus 74 ?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "128"
         )); 
-    })
+    });
+
+    test('Should return largest number', () => {
+        const query = "Which of the following numbers is the largest: 18, 84, 63?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "84"
+        ));
+    });
 
 });

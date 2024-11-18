@@ -29,5 +29,17 @@ export default function QueryProcessor(query: string): string {
     return "Invalid query for sum";
   }
 
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers && numbers.length === 3) {
+        const a = parseInt(numbers[0], 10);
+        const b = parseInt(numbers[1], 10);
+        const c = parseInt(numbers[2], 10);
+        return Math.max(a, b, c).toString();
+    }
+    return "Invalid query for largest number";
+}
+
+
 return "I'm sorry, I don't understand your query";}
 
