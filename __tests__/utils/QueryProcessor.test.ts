@@ -43,6 +43,14 @@ describe("QueryProcessor", () => {
         )); 
     });
 
+    test('Should return sum', () => {
+        const query = "What is 84 minus 74 ?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "10"
+        )); 
+    });
+
     test('Should return multiple', () => {
         const query = "What is 54 multiplied by 4 ?";
         const response: string = QueryProcessor(query);
