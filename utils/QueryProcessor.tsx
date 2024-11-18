@@ -50,6 +50,20 @@ if (query.toLowerCase().includes("multiplied")) {
   return "Invalid query for sum";
 }
 
+if (query.toLowerCase().includes("square and a cube")) {
+  const numbers = query.match(/\d+/g);
+  if (numbers && numbers.length === 7) {
+      const results = numbers.filter(num => {
+          const n = parseInt(num, 10);
+          const sqrt = Math.sqrt(n);
+          const cbrt = Math.cbrt(n);
+          return Number.isInteger(sqrt) && Number.isInteger(cbrt);
+      });
+      return results.length > 0 ? results.join(", ") : "No numbers are both square and cube";
+  }
+  return "Invalid query for square and cube";
+}
+
 
 return "I'm sorry, I don't understand your query";}
 
