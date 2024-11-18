@@ -43,6 +43,14 @@ describe("QueryProcessor", () => {
         )); 
     });
 
+    test('Should return multiple', () => {
+        const query = "What is 54 multiplied by 4 ?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "216"
+        )); 
+    });
+
     test('Should return largest number', () => {
         const query = "Which of the following numbers is the largest: 18, 84, 63?";
         const response: string = QueryProcessor(query);

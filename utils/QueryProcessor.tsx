@@ -40,6 +40,16 @@ export default function QueryProcessor(query: string): string {
     return "Invalid query for largest number";
 }
 
+if (query.toLowerCase().includes("multiplied")) {
+  const numbers = query.match(/\d+/g);
+  if (numbers && numbers.length === 2) {
+      const a = parseInt(numbers[0], 10);
+      const b = parseInt(numbers[1], 10);
+      return (a * b).toString();
+  }
+  return "Invalid query for sum";
+}
+
 
 return "I'm sorry, I don't understand your query";}
 
