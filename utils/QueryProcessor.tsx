@@ -18,5 +18,16 @@ export default function QueryProcessor(query: string): string {
     // TODO actualiza el caso de prueba correspondiente en __tests__
     return ( "18-10826" );
   }
-  return "";
-}
+
+  if (query.toLowerCase().includes("plus")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers && numbers.length === 2) {
+        const a = parseInt(numbers[0], 10);
+        const b = parseInt(numbers[1], 10);
+        return (a + b).toString();
+    }
+    return "Invalid query for sum";
+  }
+
+return "I'm sorry, I don't understand your query";}
+

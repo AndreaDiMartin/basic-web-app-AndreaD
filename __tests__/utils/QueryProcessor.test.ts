@@ -35,4 +35,12 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('Should return sum', () => {
+        const query = "What is the sum of 54 plus 74 ?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "128"
+        )); 
+    })
+
 });
