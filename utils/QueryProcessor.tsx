@@ -64,6 +64,23 @@ if (query.toLowerCase().includes("square and a cube")) {
   return "Invalid query for square and cube";
 }
 
+if (query.toLowerCase().includes("primes")) {
+  const numbers = query.match(/\d+/g);
+  if (numbers && numbers.length === 5) {
+      const isPrime = (num: number) => {
+          if (num <= 1) return false;
+          for (let i = 2; i <= Math.sqrt(num); i++) {
+              if (num % i === 0) return false;
+          }
+          return true;
+      };
+      const results = numbers.filter(num => isPrime(parseInt(num, 10)));
+      return results.length > 0 ? results.join(", ") : "No prime numbers found";
+  }
+  return "Invalid query for prime numbers";
+}
+
+
 
 return "I'm sorry, I don't understand your query";}
 

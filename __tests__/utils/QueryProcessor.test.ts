@@ -67,4 +67,12 @@ describe("QueryProcessor", () => {
         ));
     });
 
+    test('Should return prime numbers', () => {
+        const query = "Which of the following numbers are primes: 2, 25, 53, 30, 45?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "2, 53"
+        ));
+    });
+
 });
